@@ -1,0 +1,673 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    min-width: 1320px;
+    font-family: 'NanumSquareNeo';
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #000;
+}
+
+/* 스크롤바 꾸미기 */
+body {
+    display: block;
+    margin: 8px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f97a08;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+/* 스크롤바 꾸미기 끝 */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    padding: 30px 30px 0;
+    z-index: 5;
+}
+
+/*움직이는 메뉴버튼*/
+input[id="menuicon"] {
+    display: none;
+}
+
+/*메뉴 아이콘 버튼 크기, 위치*/
+input[id="menuicon"]+label {
+    display: block;
+    width: 50px;
+    height: 32px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+/*메뉴 버튼 클릭했을 때 X버튼 색상*/
+input[id="menuicon"]:checked+label span {
+    background: #f97a08;
+}
+
+/*메뉴 세줄 버튼*/
+input[id="menuicon"]+label span {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 5px;
+    border-radius: 30px;
+    background: #f97a08;
+    transition: all 0.5s;
+}
+
+input[id="menuicon"]+label span:nth-child(1) {
+    top: 0;
+}
+
+input[id="menuicon"]+label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[id="menuicon"]+label span:nth-child(3) {
+    bottom: 0;
+}
+
+/*메뉴 버튼 클릭했을 때 세줄버튼에서 X버튼으로 바뀌는 모습*/
+input[id="menuicon"]:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+input[id="menuicon"]:checked+label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/*메뉴 창*/
+.sidebar {
+    width: 20%;
+    /* 메뉴 넓이 조절 */
+    height: 100%;
+    background: linear-gradient(-90deg, #F97A08, #897667);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    transition: all 0.5s;
+    padding: 100px 50px 0;
+    /* 폰트랑 테두리 간격 */
+}
+
+.sidebar ul li {
+    padding: 30px 0 40px 50px;
+    /* 메뉴 사이 간격 */
+}
+
+.sidebar li a {
+    color: #F97A08;
+    font-size: 30px;
+
+}
+
+input[id="menuicon"]:checked+label+div {
+    left: 0;
+}
+
+/* header div end */
+
+
+/* card div */
+.card {
+    width: 90%;
+    min-width: 1320px;
+    margin: auto;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 150px;
+    position: relative;
+    transition: .4s;
+    transform-style: preserve-3d;
+}
+
+.card>img,
+.card>div {
+    width: 25%;
+}
+
+.card>div img {
+    width: 100%;
+    display: block;
+}
+
+.card1:hover img,
+.card2:hover img,
+.card3:hover img,
+.card4:hover img {
+    opacity: 0;
+}
+
+.card1 {
+    background: url(../image/cardback3.png) center;
+}
+
+.card2 {
+    background: url(../image/cardback4.png) center;
+}
+
+.card3 {
+    background: url(../image/cardback1.png) center;
+}
+
+.card4 {
+    background: url(../image/cardback2.png) center;
+}
+
+/* card end */
+
+/* menu */
+.menu {
+    width: 1000px;
+    margin: auto;
+    font-family: 'Instrument Serif', serif;
+    font-size: 30px;
+    margin-bottom: 150px;
+}
+
+.menu ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul li {
+    border: #F97A08 1px solid;
+    border-radius: 50px;
+    padding: 25px 40px;
+}
+
+.menu li a:hover {
+    color: #F97A08;
+    text-shadow: 0 0 15px #F97A08;
+}
+
+/* menu div end */
+
+/* shop set */
+.shop1 {
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.shop1 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop1 ul li {
+    border: #F97A08 1px solid;
+    border-radius: 100px;
+    background: url(../image/bg_orange_650.png) center no-repeat;
+}
+
+/* 상품 설명 */
+.shop1_text p {
+    width: 80%;
+    margin: auto;
+    font-family: 'Instrument Serif', serif;
+    color: #fff;
+    text-shadow: 2px 2px 1px #f97a08;
+    font-size: 90px;
+    background-color: none;
+    align-items: center;
+}
+
+.shop1_text {
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    padding: 10px 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.shop1>ul li:hover {
+    box-shadow: #F97A08 0 0 10px;
+}
+
+.shop1 li:hover .shop1_text {
+    opacity: 1;
+    /* transform: translateY(-200px); */
+}
+
+/* shop set end */
+
+/* shop2 cosmetic */
+.shop2 {
+    width: 1320px;
+    min-width: 1320px;
+    margin: auto;
+    margin-bottom: 150px;
+    text-align: center;
+    position: relative;
+}
+
+.shop2 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shop2 ul li {
+    border: #F97A08 1px solid;
+    border-radius: 100px;
+    background: url(../image/bg_orange_650.png) center no-repeat;
+    margin-bottom: 30px;
+}
+
+
+/* 상품 설명 */
+.shop2_text p {
+    width: 80%;
+    margin: auto;
+    font-family: 'Instrument Serif', serif;
+    color: #fff;
+    text-shadow: 2px 2px 1px #f97a08;
+    font-size: 90px;
+    background-color: none;
+    align-items: center;
+}
+
+.shop2_text {
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    padding: 10px 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.shop2>ul li:hover {
+    box-shadow: #F97A08 0 0 10px;
+}
+
+.shop2 li:hover .shop2_text {
+    opacity: 1;
+    /* transform: translateY(-200px); */
+}
+
+
+/* shop2 cosmetic end */
+
+
+/* shop3 cosmetic */
+.shop3 {
+    width: 1320px;
+    min-width: 1320px;
+    margin: auto;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.shop3 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shop3 ul li {
+    border: #cfd97a 1px solid;
+    border-radius: 100px;
+    background: url(../image/bg_green_450.png) center no-repeat;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.shop3 .big {
+    background: url(../image/bg_green_850.png) center no-repeat;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* 상품 설명 */
+.shop3_text p {
+    font-family: 'Instrument Serif', serif;
+    font-size: 90px;
+    line-height: 100px;
+    width: 80%;
+    color: #fff;
+    text-shadow: 2px 2px 1px #cfd97a;
+    margin: auto;
+    padding: 10px 0;
+    background-color: none;
+    align-items: center;
+}
+
+.shop3_text {
+    text-align: center;
+    position: absolute;
+    top: 190px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.shop3>ul li:hover {
+    box-shadow: #cfd97a 0 0 10px;
+}
+
+.shop3 li:hover .shop3_text {
+    opacity: 1;
+    /* transform: translateY(-200px); */
+}
+
+
+/* shop3 cosmetic end */
+
+/* shop4 lip  */
+.shop4 {
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.shop4 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop4 ul li {
+    border: #F97A08 1px solid;
+    border-radius: 100px;
+    background: url(../image/bg_orange_650.png) center no-repeat;
+    position: relative;
+}
+
+/* 상품 설명 */
+.shop4_text p {
+    font-family: 'Instrument Serif', serif;
+    font-size: 90px;
+    width: 80%;
+    color: #fff;
+    text-shadow: 2px 2px 1px #f97a08;
+    margin: auto;
+    background-color: none;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.shop4_text {
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.shop4>ul li:hover {
+    box-shadow: #F97A08 0 0 10px;
+}
+
+.shop4 li:hover .shop4_text {
+    opacity: 1;
+    /* transform: translateY(-200px); */
+}
+
+/* shop4 lip end */
+
+/* shop5 cosmetic */
+.shop5 {
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.shop5 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shop5 ul li {
+    border: #fbafaf 1px solid;
+    border-radius: 100px;
+    background: url(../image/bg_pink_450.png) center no-repeat;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.shop5 .big {
+    background: url(../image/bg_pink_850.png) center no-repeat;
+    margin-bottom: 10px;
+}
+
+/* 상품 설명 */
+.shop5_text p {
+    font-family: 'Instrument Serif', serif;
+    font-size: 90px;
+    line-height: 100px;
+    width: 80%;
+    color: #fff;
+    text-shadow: 2px 2px 1px #fbafaf;
+    margin: auto;
+    background-color: none;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.shop5_text {
+    text-align: center;
+    position: absolute;
+    top: 190px;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.shop5>ul>li:hover {
+    box-shadow: #fbafaf 0 0 10px;
+}
+
+.shop5 li:hover .shop5_text {
+    opacity: 1;
+    /* transform: translateY(-200px); */
+}
+
+/* shop5 cosmetic end */
+
+
+/* footer */
+/* footer */
+/* footer */
+/* footer */
+.footer {
+    width: 100%;
+    margin: auto;
+    height: 250px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #fff;
+    background: linear-gradient(180deg, #F97A08, #897667);
+    position: relative;
+}
+
+.b1 {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+}
+
+.b2 {
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* f 작은 곳에 너비 지정해주기 */
+.footer .f {
+    width: 1320px;
+    margin: auto;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    align-items: center;
+}
+
+/* footer font 조절 */
+.footer a {
+    text-align: left;
+    font-size: 30px;
+    line-height: 35px;
+    color: #fff;
+}
+
+.footer .f1 {
+    text-align: left;
+}
+
+.footer .f1 span {
+    font-family: 'Instrument Serif', serif;
+    font-size: 35px;
+}
+
+.footer .f1 p {
+    padding-top: 17px;
+    line-height: 30px;
+}
+
+.footer .f2 p {
+    padding-top: 5px;
+}
+
+.footer .f3 a {
+    font-family: 'Instrument Serif', serif;
+    padding-right: 50px;
+}
+
+.footer .f4 a {
+    font-family: 'Instrument Serif', serif;
+}
+
+/* footer box size */
+.footer div {
+    width: 500px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer .f3 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.footer .f4 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.footer .f2 img {
+    display: block;
+    margin: auto;
+}
+
+/* 
+.footer .insta {
+    background: url(./images_about/instagram.png) no-repeat left;
+    padding-left: 50px;
+}
+
+.footer .kakao {
+    background: url(./images_about/kakao-talk.png) no-repeat left;
+    padding-left: 50px;
+} */

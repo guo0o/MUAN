@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-width: 1320px;
+    font-family: 'NanumSquareNeo';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #000;
+}
+
+/* 스크롤바 꾸미기 */
+body {
+    display: block;
+    margin: 8px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f97a08;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+/* 스크롤바 꾸미기 끝 */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    padding: 30px 30px 0;
+    z-index: 5;
+}
+
+/*움직이는 메뉴버튼*/
+input[id="menuicon"] {
+    display: none;
+}
+
+/*메뉴 아이콘 버튼 크기, 위치*/
+input[id="menuicon"]+label {
+    display: block;
+    width: 50px;
+    height: 32px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+/*메뉴 버튼 클릭했을 때 X버튼 색상*/
+input[id="menuicon"]:checked+label span {
+    background: #f97a08;
+}
+
+/*메뉴 세줄 버튼*/
+input[id="menuicon"]+label span {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 5px;
+    border-radius: 30px;
+    background: #f97a08;
+    transition: all 0.5s;
+}
+
+input[id="menuicon"]+label span:nth-child(1) {
+    top: 0;
+}
+
+input[id="menuicon"]+label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[id="menuicon"]+label span:nth-child(3) {
+    bottom: 0;
+}
+
+/*메뉴 버튼 클릭했을 때 세줄버튼에서 X버튼으로 바뀌는 모습*/
+input[id="menuicon"]:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+input[id="menuicon"]:checked+label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/*메뉴 창*/
+.sidebar {
+    width: 20%;
+    /* 메뉴 넓이 조절 */
+    height: 100%;
+    background: linear-gradient(-90deg, #F97A08, #897667);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    transition: all 0.5s;
+    padding: 100px 50px 0;
+    /* 폰트랑 테두리 간격 */
+}
+
+.sidebar ul li {
+    padding: 30px 0 40px 50px;
+    /* 메뉴 사이 간격 */
+}
+
+.sidebar li a {
+    color: #F97A08;
+    font-size: 30px;
+
+}
+
+input[id="menuicon"]:checked+label+div {
+    left: 0;
+}
+
+/* header div end */
+/* header div end */
+
+/* 메인 */
+.main {
+    width: 100%;
+    min-width: 1320px;
+    height: 800px;
+    margin: auto;
+    text-align: center;
+    margin: 20px 0 100px;
+}
+
+.main img {
+    display: block;
+}
+
+.main_a {
+    position: relative;
+}
+
+.main_a .a1 {
+    position: absolute;
+    left: 18%;
+}
+
+.main_a .a2 {
+    position: absolute;
+    right: 18%;
+    top: 50px;
+}
+
+/* 슬로건  */
+.slogan {
+    width: 1320px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/* 네이밍 */
+.naming {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-weight: 400;
+}
+
+.naming li img {
+    padding-bottom: 20px;
+}
+
+
+.naming_line {
+    width: 1000px;
+    margin: auto;
+    border: #F97A08 2px solid;
+    border-radius: 100px;
+    padding: 50px 0;
+}
+
+/* 컬러칩 */
+.color {
+    width: 100%;
+    margin: auto;
+    margin: 100px 0 200px;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.color div {
+    width: 50%;
+}
+
+.color li{
+    width: 50%;
+}
+
+.color_text {
+    width: 100%;
+    padding-left: 60px;
+    text-align: center;
+}
+
+.chip li{
+    background-size: contain;
+}
+
+.color ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color li p {
+    color: #fff;
+    padding-top: 80px;
+    text-align: center;
+}
+
+.chip1 {
+    height: 200px;
+    background: url(../image/color_orange.png) center no-repeat;
+}
+
+.chip2 {
+    height: 200px;
+    background: url(../image/color_brown.png) center no-repeat;
+}
+
+.chip3 {
+    height: 200px;
+    background: url(../image/color_pink.png) center no-repeat;
+}
+
+.chip4 {
+    height: 200px;
+    background: url(../image/color_green.png) center no-repeat;
+}
+
+.about_banner {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.about_banner img{
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+.bubble {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.bubble img {
+    width: 40%;
+}
+
+.imac {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.imac img {
+    margin: auto;
+    display: block;
+    align-items: center;
+}
+
+.imac ul {
+    width: 80%;
+    margin: auto;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.imac ul li {
+    border: #F97A08 1px solid;
+    border-radius: 50px;
+    padding: 20px 30px;
+}
+
+.imac h6 {
+    margin-top: 50px;
+}
+
+.imac h6 a {
+    color: #F97A08;
+    border: #F97A08 1px solid;
+    border-radius: 30px;
+    padding: 20px 30px
+}
+
+.imac h6 a:hover {
+    background-color: #F97A08;
+    color: #fff;
+    box-shadow: 0 0 15px #f97a08;
+}
+
+/* 아이돌 idol */
+.idol {
+    width: 100%;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 200px;
+}
+
+.idol div {
+    width: 50%;
+}
+
+.idolimg {
+    background: url(./image/pers_img1.png) no-repeat center center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 900px;
+    background-size: 100%;
+}
+
+.idoltext img {
+    width: 100%;
+}
+
+
+
+/* footer */
+/* footer */
+.footer {
+    width: 100%;
+    margin: auto;
+    height: 250px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #fff;
+    background: linear-gradient(180deg, #F97A08, #897667);
+    position: relative;
+}
+
+.b1 {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+}
+
+.b2 {
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* f 작은 곳에 너비 지정해주기 */
+.footer .f {
+    width: 1320px;
+    margin: auto;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+
+    align-items: center;
+}
+
+/* footer font 조절 */
+.footer a {
+    text-align: left;
+    font-size: 30px;
+    line-height: 35px;
+    color: #fff;
+}
+
+.footer .f1 {
+    text-align: left;
+}
+
+.footer .f1 span {
+    font-family: 'Instrument Serif', serif;
+    font-size: 35px;
+}
+
+.footer .f1 p {
+    padding-top: 17px;
+    line-height: 30px;
+}
+
+.footer .f2 p {
+    padding-top: 5px;
+}
+
+.footer .f3 a {
+    font-family: 'Instrument Serif', serif;
+    padding-right: 50px;
+}
+
+.footer .f4 a {
+    font-family: 'Instrument Serif', serif;
+}
+
+/* footer box size */
+.footer div {
+    width: 500px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer .f3 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.footer .f4 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.footer .f2 img {
+    display: block;
+    margin: auto;
+}

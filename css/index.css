@@ -1,0 +1,743 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-width: 1320px;
+    overflow-x: hidden;
+    font-family: 'NanumSquareNeo';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #000;
+
+}
+
+/* 스크롤바 꾸미기 */
+body {
+    display: block;
+    margin: 8px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #f97a08;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+/* 스크롤바 꾸미기 끝 */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    padding: 30px 30px 0;
+    z-index: 5;
+}
+
+/*움직이는 메뉴버튼*/
+input[id="menuicon"] {
+    display: none;
+}
+
+/*메뉴 아이콘 버튼 크기, 위치*/
+input[id="menuicon"]+label {
+    display: block;
+    width: 50px;
+    height: 32px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+/*메뉴 버튼 클릭했을 때 X버튼 색상*/
+input[id="menuicon"]:checked+label span {
+    background: #f97a08;
+}
+
+/*메뉴 세줄 버튼*/
+input[id="menuicon"]+label span {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 5px;
+    border-radius: 30px;
+    background: #f97a08;
+    transition: all 0.5s;
+}
+
+input[id="menuicon"]+label span:nth-child(1) {
+    top: 0;
+}
+
+input[id="menuicon"]+label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[id="menuicon"]+label span:nth-child(3) {
+    bottom: 0;
+}
+
+/*메뉴 버튼 클릭했을 때 세줄버튼에서 X버튼으로 바뀌는 모습*/
+input[id="menuicon"]:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+input[id="menuicon"]:checked+label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/*메뉴 창*/
+.sidebar {
+    width: 20%;
+    /* 메뉴 넓이 조절 */
+    height: 100%;
+    background: linear-gradient(-90deg, #F97A08, #897667);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    transition: all 0.5s;
+    padding: 100px 50px 0;
+    /* 폰트랑 테두리 간격 */
+}
+
+.sidebar ul li {
+    padding: 30px 0 40px 50px;
+    /* 메뉴 사이 간격 */
+}
+
+.sidebar li a {
+    color: #F97A08;
+    font-size: 30px;
+
+}
+
+input[id="menuicon"]:checked+label+div {
+    left: 0;
+}
+
+/* header div end */
+
+/* section 1 */
+.section1 img {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 150px;
+}
+
+/* section1 div end */
+
+
+/* main_text */
+.main_text {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 150px;
+}
+
+.main_text h1 {
+    font-family: instrument serif;
+    font-weight: 200;
+    font-size: 80px;
+    color: #F97A08;
+    margin: 40px 0;
+}
+
+.main_text a {
+    border: #F97A08 1px solid;
+    border-radius: 30px;
+    padding: 20px;
+    color: #F97A08;
+}
+
+.main_text a:hover {
+    box-shadow: 0 0 15px #F97A08;
+}
+
+.main_text {
+    transition: 1.9s cubic-bezier(.14, .46, 0, 1.34);
+    opacity: 1;
+    will-change: transform, top, opacity;
+}
+
+
+/* section2 div */
+.section2 {
+    width: 1520px;
+    min-width: 1320px;
+    margin: auto;
+    margin-bottom: 300px;
+}
+
+.section2 div {
+    width: 100%;
+    margin: auto;
+}
+
+.section2 img {
+    margin: auto;
+    display: block;
+    width: 90%;
+}
+
+.section2 p {
+    text-align: center;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 80px;
+    margin-bottom: 50px;
+    color: #f97a08;
+}
+
+
+.section2 ul {
+    width: 100%;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    position: relative;
+    /*상품 설명 기준*/
+}
+
+.section2 .top {
+    margin-bottom: 50px;
+}
+
+.section2 a:hover {
+    opacity: 80%;
+    filter: drop-shadow(0 0 10px #f97a08);
+}
+
+/* 상품 설명 */
+.top_text1 p {
+    width: 80%;
+    margin: auto;
+    font-size: 40px;
+    background-color: #fffefe88;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.top_text1 {
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.top li:hover .top_text1 {
+    opacity: 1;
+    bottom: 30px;
+    top: 400px;
+    /* transform: translateY(-200px); */
+}
+
+/* 상품 설명 */
+.bottom_text1 p {
+    width: 80%;
+    margin: auto;
+    font-size: 40px;
+    background-color: #fffefe88;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.bottom_text1 {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.bottom li:hover .bottom_text1 {
+    opacity: 1;
+    bottom: 30px;
+    top: 400px;
+    /* transform: translateY(-200px); */
+}
+
+/* section2 div end */
+
+/* section3 div  */
+.section3 {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    margin-bottom: 300px;
+}
+
+.section3 img {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.section3 a {
+    position: absolute;
+    bottom: 60px;
+    right: 31%;
+    border: #fff 1px solid;
+    border-radius: 20px;
+    padding: 0 20px;
+    background-color: #fff;
+    color: #f97a08;
+}
+
+.section3 a:hover {
+    box-shadow: 0 0 15px #fff;
+}
+
+/* section3 div end */
+
+/* section4 div */
+.section4 {
+    width: 1900px;
+    margin: auto;
+    margin-bottom: 300px;
+    font-family: 'Instrument Serif', serif;
+    text-align: center;
+}
+
+
+.section4>div,
+.section4>li {
+    width: 50%;
+}
+
+
+.section4 div {
+    width: 100%;
+    margin: auto;
+}
+
+
+.section4 img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.section4 ul {
+    width: 100%;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section4 .right_text {
+    width: 40%;
+    align-items: center;
+
+}
+
+.section4 .left_text {
+    width: 40%;
+}
+
+.section4 span {
+    font-size: 60px;
+}
+
+.section4 h5 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 100;
+    color: #897667;
+}
+
+.section4 a h6 {
+    color: #f97a08;
+    font-size: 30px;
+    font-weight: 100;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+.section4 .right_text h6 {
+    border: 1px solid #F97A08;
+    border-radius: 50px;
+    margin: 40px 0 0;
+}
+
+.section4 .left_text h6 {
+    border: 1px solid #F97A08;
+    border-radius: 50px;
+    margin: 40px 0 0;
+}
+
+.section4 a:hover {
+    text-shadow: 0 0 10px #F97A08;
+}
+
+/* section5 div */
+.section5 {
+    width: 1900px;
+    margin: auto;
+    margin-bottom: 300px;
+}
+
+.section5 img {
+    display: block;
+    margin: auto;
+}
+
+.section5 ul {
+    width: 100%;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.section5 li {
+    width: 50%;
+    margin: auto;
+    line-height: 75px;
+}
+
+
+.section5 div {
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+}
+
+.section5 span {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.section5 p {
+    text-align: center;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 80px;
+    margin-bottom: 50px;
+    color: #f97a08;
+}
+
+.section5 .man_text {
+    background: url(../image/section5_2.png) center no-repeat;
+    height: 700px;
+    color: #fff;
+
+}
+
+.section5 .women_text {
+    background: url(../image/section5_3.png) center;
+    height: 700px;
+    color: #fff;
+}
+
+.man li {
+    overflow: hidden;
+}
+
+.man li:hover img {
+    transform: scale(1.3, 1.3);
+}
+
+.man li img {
+    display: block;
+    transition: all .5s;
+}
+
+.women li {
+    overflow: hidden;
+}
+
+.women li:hover img {
+    transform: scale(1.3, 1.3);
+}
+
+.women li img {
+    display: block;
+    transition: all .5s;
+}
+
+/* section5 div  end*/
+
+/* section6 */
+.section6 {
+    width: 1320px;
+    margin: auto;
+    margin-bottom: 200px;
+}
+
+.section6 ul {
+    width: 100%;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.section6 .best_text {
+    background: url(../image/section6_text.png) center;
+    width: 578px;
+    height: 255px;
+}
+
+.section6 .best_text p {
+    padding-top: 80px;
+    color: #fff;
+    text-align: center;
+}
+
+.section6 li a:hover {
+    filter: drop-shadow(0 0 10px #f97a08);
+}
+
+/* section6 div end */
+
+/* section7 */
+.section7 {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.section7 img {
+    display: block;
+    margin: auto;
+}
+
+.section7 div {
+    padding: 25px 0;
+}
+
+.section7 a {
+    color: #000;
+    font-family: instrument serif;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.section7 .line1 {
+    width: 98%;
+    margin: auto;
+    border-top: #000 2px solid;
+}
+
+.section7 .line2 {
+
+    width: 98%;
+    margin: auto;
+    border-top: #000 2px solid;
+    border-bottom: #000 2px solid;
+}
+
+.section7 .line3 {
+    width: 98%;
+    margin: auto;
+    border-bottom: #000 2px solid;
+}
+
+.section7 a:hover {
+    color: #f97a08;
+}
+
+/* section8 div  */
+.section8 {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.section8 .iphone {
+    width: 100%;
+    display: block;
+}
+
+.icon1 {
+    position: absolute;
+    top: 250px;
+    left: 23%;
+}
+
+.icon2 {
+    position: absolute;
+    top: 700px;
+    right: 20%;
+}
+
+
+.section8 a img:hover {
+    filter: drop-shadow(0 0 10px #f97a08);
+}
+
+
+/* footer */
+/* footer */
+.footer {
+    width: 100%;
+    margin: auto;
+    height: 250px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #fff;
+    background: linear-gradient(180deg, #F97A08, #897667);
+    position: relative;
+}
+
+.b1 {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+}
+
+.b2 {
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* f 작은 곳에 너비 지정해주기 */
+.footer .f {
+    width: 1320px;
+    margin: auto;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+
+    align-items: center;
+}
+
+/* footer font 조절 */
+.footer a {
+    text-align: left;
+    font-size: 30px;
+    line-height: 35px;
+    color: #fff;
+}
+
+.footer .f1 {
+    text-align: left;
+}
+
+.footer .f1 span {
+    font-family: 'Instrument Serif', serif;
+    font-size: 35px;
+}
+
+.footer .f1 p {
+    padding-top: 17px;
+    line-height: 30px;
+}
+
+.footer .f2 p {
+    padding-top: 5px;
+}
+
+.footer .f3 a {
+    font-family: 'Instrument Serif', serif;
+    padding-right: 50px;
+}
+
+.footer .f4 a {
+    font-family: 'Instrument Serif', serif;
+}
+
+/* footer box size */
+.footer div {
+    width: 500px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer .f3 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.footer .f4 ul {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.footer .f2 img {
+    display: block;
+    margin: auto;
+}
