@@ -292,7 +292,7 @@ input[id="menuicon"]:checked+label+div {
 /* section4 div */
 .section4 {
     width: 90%;
-    min-width: 1320px;
+    max-width:1920px;
     margin: auto;
     margin-bottom: 300px;
     font-family: 'Instrument Serif', serif;
